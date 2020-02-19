@@ -44,7 +44,7 @@ public enum FlowerStore {
     public String toString(){
         String lang = (View.resourceBundle.getLocale().toString()).equals("ua") ?
                 FlowerStore.this.ukrName : FlowerStore.this.name();
-        return "\t" + lang + "-" + key;
+        return "\t" + lang;
     }
 
 

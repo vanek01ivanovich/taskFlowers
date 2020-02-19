@@ -2,9 +2,7 @@ package controller;
 
 import model.entity.Accessories;
 import model.entity.Flowers;
-import model.entity.Staff;
-import model.entity.enumValues.AccessoryStore;
-import model.entity.enumValues.FlowerStore;
+import model.entity.enumValues.Functions;
 import view.View;
 
 import java.util.ArrayList;
@@ -35,7 +33,7 @@ class MakeFunctions {
 
     void functions() {
         view.printBundle(View.INPUT_FUNCTIONS);
-        view.printFunctionsFromStore();
+        view.printStaffFromStore(Functions.class);
 
         do {
             view.printBundle(View.INPUT_NUMB_FUNCTION);
@@ -59,9 +57,10 @@ class MakeFunctions {
     }
     private void sortFreshness(){
         flowersInBouquet.sort(Comparator.comparingInt(Flowers::getFreshnessDays));
-        //вынести в view
+
+        String days = (View.resourceBundle.getLocale().toString()).equals("ua") ? " днів": " days";
         for (Flowers fl: flowersInBouquet) {
-            System.out.println(fl.getName() + " - " + fl.getFreshnessDays());
+            view.printMessage(fl.getName(), " - ",String.valueOf(fl.getFreshnessDays()),days);
         }
     }
 
@@ -73,9 +72,13 @@ class MakeFunctions {
 
         for (Flowers fl:flowersInBouquet) {
             if (fl.getTrunkLength() >= minLength && fl.getTrunkLength() <= maxLength){
-                System.out.println(fl.getName() + " - " + fl.getTrunkLength());
+                view.printMessage(fl.getName()," - ",String.valueOf(fl.getTrunkLength()));
+                return;
             }
         }
+
+        view.printBundle(View.INPUT_WRONG_LENGTH);
+
 
     }
 

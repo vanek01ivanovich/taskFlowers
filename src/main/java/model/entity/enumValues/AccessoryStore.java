@@ -30,6 +30,6 @@ public enum AccessoryStore {
     public String toString(){
         String lang = (View.resourceBundle.getLocale().toString()).equals("ua") ?
                 AccessoryStore.this.ukrName : AccessoryStore.this.name();
-        return "\t" + lang + "-" + key;
+        return "\t" + lang;
     }
 }

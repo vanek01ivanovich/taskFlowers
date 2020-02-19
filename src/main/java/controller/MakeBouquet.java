@@ -6,8 +6,6 @@ import model.entity.enumValues.FlowerStore;
 import view.View;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 
@@ -20,6 +18,7 @@ public class MakeBouquet {
     private String input;
     private CheckStaff checkStaff;
     private int randomNumber;
+    private ArrayList<Integer> hasAccessories = new ArrayList<>();
 
 
 
@@ -37,21 +36,23 @@ public class MakeBouquet {
         checkStaff = new CheckStaff(scanner,view);
 
         view.printBundle(View.INPUT_BOUQUET);
-        view.printFlowersFromStore();
+        view.printStaffFromStore(FlowerStore.class);
 
         addStaffToBouquet(0,View.INPUT_CHOICE_FLOWERS);
 
+        view.printBundle(View.OUTPUT_VALUES);
         for (Staff fl:flowersInBouquet) {
-            System.out.println(fl.getName());
+            view.printMessage(fl.getName());
         }
 
         view.printBundle(View.INPUT_ACCESSORIES);
-        view.printAccessoriesFromStore();
+        view.printStaffFromStore(AccessoryStore.class);
 
         addStaffToBouquet(1,View.INPUT_CHOICE_ACCESSORIES);
 
+        view.printBundle(View.OUTPUT_VALUES);
         for (Staff fl:accessoriesInBouquet) {
-            System.out.println(fl.getName() + " - " + fl.getPrice());
+            view.printMessage(fl.getName());
         }
 
         MakeFunctions makeFunctions = new MakeFunctions(scanner,view,checkStaff,flowersInBouquet,accessoriesInBouquet);
@@ -92,22 +93,19 @@ public class MakeBouquet {
     private void getRandomAccessoriesValue(int number){
         for (int i = 0; i < number; i++) {
             randomNumber = (int) (Math.random() * (AccessoryStore.values().length));
+            if (i != 0) {
+                while (hasAccessories.contains(randomNumber)) {
+                    randomNumber = (int) (Math.random() * (AccessoryStore.values().length));
+                }
+            }
+            hasAccessories.add(randomNumber);
             for (AccessoryStore accessory: AccessoryStore.values()) {
                 if (randomNumber == accessory.ordinal()){
-                    //if (!accessoriesInBouquet.isEmpty() && !accessoriesInBouquet.contains(accessory)){
                     staff = new Accessories(accessory);
                     accessoriesInBouquet.add((Accessories)staff);
                     break;
-                   // }
-
                 }
             }
         }
     }
-
-
-
-
-
-
 }

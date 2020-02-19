@@ -1,5 +1,6 @@
 package controller;
 
+import model.entity.enumValues.AccessoryStore;
 import model.entity.enumValues.FlowerStore;
 import model.entity.enumValues.Functions;
 import view.View;
@@ -18,7 +19,7 @@ class CheckStaff {
     }
 
     int checkValueForStaff(Scanner scanner){
-        while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[0-9]+"))){
+        while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[1-9]||[1-9][0-9]+"))){
                 //&& valueIsInStaff(input))){
             view.printBundle(View.INPUT_WRONG);
         }
@@ -35,10 +36,12 @@ class CheckStaff {
         return Integer.parseInt(input);
     }
     int checkValueForStaff(Scanner scanner, int numb){
-        while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[0-9]+") &&
+        while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[1-9]||[1-9][0-9]+") &&
                 (Integer.parseInt(input) <= numb))){
                 //&& valueIsInStaff(input))){
-            view.printBundle(View.INPUT_WRONG,View.INPUT_WRONG_ACCESSORIES,View.INPUT_CHOICE_ACCESSORIES);
+            view.printBundle(View.INPUT_WRONG);
+            view.printBundle(View.INPUT_WRONG_ACCESSORIES, AccessoryStore.values().length,View.ACCESSORIES);
+            view.printBundle(View.INPUT_CHOICE_ACCESSORIES);
         }
 
         return Integer.parseInt(input);

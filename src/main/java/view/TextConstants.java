@@ -19,4 +19,6 @@ public interface TextConstants {
     String INPUT_MIN_RANGE_LENGTH = "input.min.length.trunk";
     String INPUT_MAX_RANGE_LENGTH = "input.max.length.trunk";
     String INPUT_WRONG_LENGTH = "input.wrong.length";
+    String OUTPUT_VALUES = "output.random.value";
+    String ACCESSORIES = "input.acces";
 }
