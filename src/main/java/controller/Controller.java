@@ -8,6 +8,9 @@ public class Controller {
 
     private View view;
 
+    /**
+     * @param view
+     */
     public Controller(View view) {
         this.view = view;
     }
@@ -25,7 +28,11 @@ public class Controller {
 
     }
 
-    private int checkIntValueForLanguage(Scanner scanner){
+    /**
+     * @param scanner
+     * @return
+     */
+    public int checkIntValueForLanguage(Scanner scanner){
         String input = scanner.nextLine();
         while (!(input.equals("1") || input.equals("0"))){
             view.printMessage(View.wrongEngUkrInput);

@@ -13,13 +13,21 @@ public class CheckStaff {
     private View view;
 
 
+    /**
+     * @param scanner
+     * @param view
+     */
     public CheckStaff(Scanner scanner, View view) {
         this.scanner = scanner;
         this.view = view;
     }
 
-    int checkValueForStaff(Scanner scanner){
-        while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[1-9]||[1-9][0-9]+"))){
+    /**
+     * @param scanner
+     * @return
+     */
+    public int checkValueForStaff(Scanner scanner){
+        while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[1-9]|[1-9][0-9]+"))){
                 //&& valueIsInStaff(input))){
             view.printBundle(View.INPUT_WRONG);
         }
@@ -27,6 +35,11 @@ public class CheckStaff {
         return Integer.parseInt(input);
     }
 
+    /**
+     * @param scanner
+     * @param textBundle
+     * @return
+     */
     int checkValueForStaff(Scanner scanner, String textBundle){
         while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[0-9]+")
                 && valueIsInStaff(input))){
@@ -35,8 +48,14 @@ public class CheckStaff {
 
         return Integer.parseInt(input);
     }
+
+    /**
+     * @param scanner
+     * @param numb
+     * @return
+     */
     int checkValueForStaff(Scanner scanner, int numb){
-        while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[1-9]||[1-9][0-9]+") &&
+        while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[1-9]|[1-9][0-9]+") &&
                 (Integer.parseInt(input) <= numb))){
                 //&& valueIsInStaff(input))){
             view.printBundle(View.INPUT_WRONG);
