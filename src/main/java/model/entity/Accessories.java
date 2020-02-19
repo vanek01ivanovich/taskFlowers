@@ -8,7 +8,6 @@ public class Accessories extends Staff {
 
     public Accessories(AccessoryStore accessory) {
         super(accessory.name(),accessory.price());
-        //setPrice();
     }
 
     @Override

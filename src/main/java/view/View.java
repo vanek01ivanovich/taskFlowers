@@ -1,13 +1,8 @@
 package view;
 
-import model.entity.Accessories;
-import model.entity.Flowers;
-import model.entity.Staff;
 import model.entity.enumValues.AccessoryStore;
 import model.entity.enumValues.FlowerStore;
 import model.entity.enumValues.Functions;
-
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 

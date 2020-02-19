@@ -18,26 +18,18 @@ public enum FlowerStore {
     private final int freshnessDays;
     private final int price;
     private final int key;
-    //private int amount;
 
-
-    /*public void setAmount(int numb){
-        this.amount = amount;
-    }*/
-
-    //public int key(){return key;}
     public int trunkLength(){return trunkLength;}
     public int freshnessDays(){return freshnessDays;}
     public int price(){return price;}
     public String ukrName(){return ukrName;}
 
-    private FlowerStore(String ukrName,int key,int trunkLength,int freshnessDays,int price){
+    FlowerStore(String ukrName,int key,int trunkLength,int freshnessDays,int price){
         this.ukrName = ukrName;
         this.trunkLength = trunkLength;
         this.freshnessDays = freshnessDays;
         this.price = price;
         this.key = key;
-        //this.amount = amount;
     }
 
     @Override

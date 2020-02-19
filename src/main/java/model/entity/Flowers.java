@@ -14,7 +14,6 @@ public class Flowers extends Staff {
         super(flower.name(),flower.price());
 
         setTrunkLength(flower.trunkLength());
-        //setPrice(flower.price());
         setFreshnessDays(flower.freshnessDays());
 
     }

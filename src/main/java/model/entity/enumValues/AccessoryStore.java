@@ -3,12 +3,11 @@ package model.entity.enumValues;
 import view.View;
 
 public enum AccessoryStore {
-    RIBBON(12,"Стрічка",0),
-    WRAPPER(20,"Обгортка",1),
-    NOTE(15,"Записка",2),
-    STICKS(5,"Палочка",3);
+    RIBBON(12,"Стрічка"),
+    WRAPPER(20,"Обгортка"),
+    NOTE(15,"Записка"),
+    STICKS(5,"Палочка");
 
-    private final int key;
     private final int price;
     private final String ukrName;
 
@@ -18,12 +17,10 @@ public enum AccessoryStore {
     public int price(){
         return price;
     }
-    public int key(){return key;}
 
-    AccessoryStore(int price,String ukrName,int key){
+    AccessoryStore(int price,String ukrName){
         this.price = price;
         this.ukrName = ukrName;
-        this.key = key;
     }
 
     @Override

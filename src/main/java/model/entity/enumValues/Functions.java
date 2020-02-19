@@ -12,7 +12,7 @@ public enum Functions {
     private String lang;
 
 
-    private Functions(String ukrName,int key){
+    Functions(String ukrName,int key){
         this.ukrName = ukrName;
         this.key = key;
     }

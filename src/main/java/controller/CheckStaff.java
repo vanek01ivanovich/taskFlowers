@@ -7,13 +7,13 @@ import view.View;
 
 import java.util.Scanner;
 
-class CheckStaff {
+public class CheckStaff {
     private Scanner scanner;
     private String input;
     private View view;
 
 
-    CheckStaff(Scanner scanner, View view) {
+    public CheckStaff(Scanner scanner, View view) {
         this.scanner = scanner;
         this.view = view;
     }
