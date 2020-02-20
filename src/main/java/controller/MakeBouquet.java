@@ -26,11 +26,21 @@ public class MakeBouquet {
     private ArrayList<Accessories> accessoriesInBouquet = new ArrayList<>();
 
 
+    /**
+     * Constructor
+     * @param scanner for user`s input
+     * @param view from class View
+     */
     MakeBouquet(Scanner scanner, View view) {
         this.scanner = scanner;
         this.view = view;
     }
 
+
+    /**
+     * Method startProcess
+     * Main method of class MakeBounder
+     */
     void startProcess() {
 
         checkStaff = new CheckStaff(scanner,view);
@@ -60,6 +70,11 @@ public class MakeBouquet {
 
     }
 
+    /**
+     * Adding staff to my bouquet
+     * @param className
+     * @param message
+     */
     private void addStaffToBouquet(int className,String message){
         view.printBundle(message);
         staff = null;
@@ -76,7 +91,10 @@ public class MakeBouquet {
     }
 
 
-
+    /**
+     *  Creating new objects for Accessories
+     * @param number for number of values
+     */
     private void getRandomFlowerValue(int number){
         for (int i = 0; i < number; i++) {
             randomNumber = (int) (Math.random() * (FlowerStore.values().length));
@@ -90,6 +108,10 @@ public class MakeBouquet {
         }
     }
 
+    /**
+     * Creating new objects for Accessories
+     * @param number for number of values
+     */
     private void getRandomAccessoriesValue(int number){
         for (int i = 0; i < number; i++) {
             randomNumber = (int) (Math.random() * (AccessoryStore.values().length));

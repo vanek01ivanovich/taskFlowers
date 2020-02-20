@@ -2,6 +2,11 @@ package model.entity.enumValues;
 
 import view.View;
 
+/**
+ * Enum class Functions
+ * @author Ivan
+ * @version 1.0
+ */
 public enum Functions {
     TOTAL_PRICE("Загальна ціна вашого букета",0),
     FLOWERS_SORT("Відсортувати квіти за свіжістю",1),

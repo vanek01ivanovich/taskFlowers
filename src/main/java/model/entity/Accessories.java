@@ -6,6 +6,9 @@ import view.View;
 public class Accessories extends Staff {
 
 
+    /**
+     * @param accessory
+     */
     public Accessories(AccessoryStore accessory) {
         super(accessory.name(),accessory.price());
     }

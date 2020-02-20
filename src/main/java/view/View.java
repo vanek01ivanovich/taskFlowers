@@ -13,6 +13,10 @@ public class View implements TextConstants {
         System.out.println(message);
     }
 
+    /**
+     * Print simple messages to the screen
+     * @param message
+     */
     public void printMessage(String... message){
         for (String mes: message) {
             System.out.print(mes);
@@ -20,6 +24,10 @@ public class View implements TextConstants {
         System.out.println();
     }
 
+    /**
+     * Print bundle message from properties to the screen
+     * @param message
+     */
     public void printBundle(String... message){
         for (String mes: message) {
             System.out.println(resourceBundle.getString(mes));
@@ -32,6 +40,10 @@ public class View implements TextConstants {
         System.out.println(resourceBundle.getString(message).concat(String.valueOf(value)));
     }
 
+    /**
+     * Choose a language for my program
+     * @param valueForChoiceLanguage
+     */
     public void languageChoice(int valueForChoiceLanguage){
         if (valueForChoiceLanguage == 1){
             resourceBundle = ResourceBundle.getBundle(BUNDLE_NAME,new Locale("ua"));
@@ -41,6 +53,10 @@ public class View implements TextConstants {
     }
 
 
+    /**
+     * Print staff form store to the screen
+     * @param cls
+     */
     public void printStaffFromStore(Class<?> cls){
         if (cls == FlowerStore.class){
             for (FlowerStore flowers: FlowerStore.values()) {

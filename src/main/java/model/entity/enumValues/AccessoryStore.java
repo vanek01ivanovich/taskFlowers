@@ -1,7 +1,11 @@
 package model.entity.enumValues;
 
 import view.View;
-
+/**
+ * Enum class AccessoryStore
+ * @author Ivan
+ * @version 1.0
+ */
 public enum AccessoryStore {
     RIBBON(12,"Стрічка"),
     WRAPPER(20,"Обгортка"),

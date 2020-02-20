@@ -22,6 +22,10 @@ class MakeFunctions {
     private ArrayList<Accessories> accessoriesInBouquet;
 
 
+    /**
+     * Constructor
+     * @param scanner,view,checkStaff,flowersInBouquet,accessoriesInBouquet signature for my constructor
+     */
     MakeFunctions(Scanner scanner, View view, CheckStaff checkStaff, ArrayList<Flowers> flowersInBouquet,
                   ArrayList<Accessories> accessoriesInBouquet) {
         this.scanner = scanner;
@@ -31,6 +35,9 @@ class MakeFunctions {
         this.flowersInBouquet = flowersInBouquet;
     }
 
+    /**
+     * Method functions,main method of class MakeFunction
+     */
     void functions() {
         view.printBundle(View.INPUT_FUNCTIONS);
         view.printStaffFromStore(Functions.class);
@@ -42,6 +49,10 @@ class MakeFunctions {
 
 
     }
+
+    /**
+     * Method of choosing functions
+     */
     private void chooseFunction(){
         switch (checkStaff.checkValueForStaff(scanner,View.INPUT_FUNCTIONS)){
             case 0:
@@ -55,6 +66,10 @@ class MakeFunctions {
                 break;
         }
     }
+
+    /**
+     * Function of sorting flowers by freshness
+     */
     private void sortFreshness(){
         flowersInBouquet.sort(Comparator.comparingInt(Flowers::getFreshnessDays));
 
@@ -64,6 +79,10 @@ class MakeFunctions {
         }
     }
 
+    /**
+     * Function of finding needed trunk`s
+     * @param scanner
+     */
     private void findTrunk(Scanner scanner){
         view.printBundle(View.INPUT_MIN_RANGE_LENGTH);
         minLength = checkStaff.checkValueForStaff(scanner);
@@ -82,6 +101,9 @@ class MakeFunctions {
 
     }
 
+    /**
+     * Function of counting total price
+     */
     private void countTotalPrice(){
         for (Flowers flowers: flowersInBouquet) {
             price += flowers.getPrice();
@@ -92,6 +114,11 @@ class MakeFunctions {
         view.printBundle(View.OUTPUT_TOTAL_PRICE,price);
     }
 
+
+    /**
+     * @param scanner User input if he/she wants to continue
+     * @return boolean if user want to continue
+     */
     private boolean checkIfContinue(Scanner scanner){
         view.printBundle(View.INPUT_CONTINUE);
         this.input = scanner.nextLine();

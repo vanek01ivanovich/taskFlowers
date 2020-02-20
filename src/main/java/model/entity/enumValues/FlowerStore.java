@@ -1,7 +1,11 @@
 package model.entity.enumValues;
 
 import view.View;
-
+/**
+ * Enum class FlowerStore
+ * @author Ivan
+ * @version 1.0
+ */
 public enum FlowerStore {
     ROSE("Роза",0,50,1,30),
     VIOLET("Фіалка",1,5,3,15),

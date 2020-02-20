@@ -8,23 +8,23 @@ import view.View;
 import java.util.Scanner;
 
 public class CheckStaff {
-    private Scanner scanner;
     private String input;
     private View view;
 
 
     /**
+     * Constructor of class CheckStaff
      * @param scanner
      * @param view
      */
     public CheckStaff(Scanner scanner, View view) {
-        this.scanner = scanner;
         this.view = view;
     }
 
     /**
+     * Method of checking if number is right
      * @param scanner
-     * @return
+     * @return int value of number of staff
      */
     public int checkValueForStaff(Scanner scanner){
         while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[1-9]|[1-9][0-9]+"))){
@@ -36,9 +36,10 @@ public class CheckStaff {
     }
 
     /**
+     * Method of checking if number is right
      * @param scanner
      * @param textBundle
-     * @return
+     * @return int value of number of staff
      */
     int checkValueForStaff(Scanner scanner, String textBundle){
         while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[0-9]+")
@@ -50,9 +51,10 @@ public class CheckStaff {
     }
 
     /**
+     * Method of checking if number is right
      * @param scanner
      * @param numb
-     * @return
+     * @return int value of number of staff
      */
     int checkValueForStaff(Scanner scanner, int numb){
         while (!(scanner.hasNext() && (input = scanner.nextLine()).matches("[1-9]|[1-9][0-9]+") &&
@@ -66,6 +68,11 @@ public class CheckStaff {
         return Integer.parseInt(input);
     }
 
+    /**
+     *Method of checking if value is in class
+     * @param text
+     * @return boolean value if function is exist
+     */
     private boolean valueIsInStaff(String text){
         for (Functions func: Functions.values()) {
             if (Integer.parseInt(text) == func.ordinal()){

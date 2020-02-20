@@ -10,6 +10,10 @@ public class Flowers extends Staff {
     private int freshnessDays;
 
 
+    /**
+     * Constructor of class Flowers
+     * @param flower
+     */
     public Flowers(FlowerStore flower){
         super(flower.name(),flower.price());
 

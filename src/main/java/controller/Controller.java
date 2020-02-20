@@ -9,7 +9,8 @@ public class Controller {
     private View view;
 
     /**
-     * @param view
+     * Constructors
+     * @param view Object of Class View
      */
     public Controller(View view) {
         this.view = view;
@@ -29,8 +30,8 @@ public class Controller {
     }
 
     /**
-     * @param scanner
-     * @return
+     * @param scanner Object for user`s input
+     * @return Integer of input from user
      */
     public int checkIntValueForLanguage(Scanner scanner){
         String input = scanner.nextLine();
