@@ -77,7 +77,6 @@ public class MakeBouquet {
      */
     private void addStaffToBouquet(int className,String message){
         view.printBundle(message);
-        staff = null;
         switch (className){
             case 0:
                 number = checkStaff.checkValueForStaff(scanner);

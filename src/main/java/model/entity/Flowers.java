@@ -5,7 +5,6 @@ import view.View;
 
 public class Flowers extends Staff {
 
-    private int key;
     private int trunkLength;
     private int freshnessDays;
 
